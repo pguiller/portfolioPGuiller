@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/app
+      - /app/node_modules
+    networks:
+      - boilerplate_dev_network
+    env_file:
+      - .env
+
+networks:
+  boilerplate_dev_network:
+    driver: bridge
+    name: boilerplate_dev_network

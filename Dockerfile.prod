@@ -1,0 +1,20 @@
+# Use an official Node runtime as a parent image
+FROM node:18-alpine as build
+
+# Set the working directory in the container to /app
+WORKDIR /app
+
+# Copy the current directory contents into the container at /app
+COPY . /app/
+
+# Install any needed packages
+RUN npm install
+RUN npm run build
+
+# Use Nginx for serving the build
+FROM nginx:stable-alpine
+COPY --from=build /app/build /usr/share/nginx/html
+
+COPY nginx.conf /etc/nginx/templates/nginx.conf.template
+
+EXPOSE 80
