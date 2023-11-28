@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from 'react';
+import React from 'react';
 import {
   AppBar,
   Box,
@@ -6,7 +6,6 @@ import {
   Drawer,
   IconButton,
   Toolbar,
-  Typography,
   useTheme,
 } from '@mui/material';
 import { useDispatch } from 'react-redux';
@@ -30,7 +29,6 @@ import WbSunnyIcon from '@mui/icons-material/WbSunny';
 import NightlightIcon from '@mui/icons-material/Nightlight';
 import { useNavigate } from 'react-router';
 import { Stage } from 'src/utils/types/MenuStage';
-import { getUserInfosAsync } from 'src/store/auth/authAsync';
 import CSwitch from 'src/components/UI/CSwitch/CSwitch';
 interface Props {
   children?: React.ReactNode;

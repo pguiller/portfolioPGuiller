@@ -1,5 +1,4 @@
 import { DecodedToken } from 'src/utils/types/decodedToken';
-import { UserInfos } from 'src/utils/types/UserInfos';
 import { AlertState, Error } from 'src/utils/types/redux';
 import { ReduxStatus } from 'src/utils/types/reduxStatusValues';
 
@@ -9,11 +8,4 @@ export interface AuthState {
   error: Error;
   status: ReduxStatus;
   token: string | null;
-}
-
-export interface getUserInfosRequest {
-  status: ReduxStatus;
-  error: Error;
-  alert: AlertState;
-  data: UserInfos;
 }
